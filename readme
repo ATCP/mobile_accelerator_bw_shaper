@@ -1,0 +1,20 @@
+Mobile Accelerator updated on 10/11/2011 finished
+
+Modification: 
+1. TCP SACK processing is modified
+2. oppotunistic transmission in loss recovery beta version
+3. F-RTO is modified on the timeout event when pkt == 0 in scheduler
+4, uploading bug is fixed by not doing any split-TCP in uploading
+5. add one parameter NUM_PKT_BEYOND_WIN that can be specified in parameters.txt to
+let accelerator to send exactly how many data packets beyond AWnd in unit of
+number of packets
+6. for Smartone testing, some following modification might not be suitable for 
+CSL testing			  
+7. bug fixed when the AWnd size cannot be ignored, the modification is under testing
+8. timeout issue during fast retransmit, it is better to have a rtx_timeout 
+9. add number of packets in flight upper-bound, the number of packets in-flight cannot 
+exceed that upper-bound
+10. the parameters.txt is updated to include the RTT limit and number of packets in-flight
+upper-bound
+11. bugs on the number of connection is fixed: does not decrease the total connection 
+number when the connection terminates
